@@ -21,3 +21,11 @@ Run the kubectl apply command to install Knative and its dependencies
 Monitor the Knative components until all of the components show a STATUS of Running:
 
 `watch -n 1 kubectl get pods --all-namespaces`{{execute}}
+
+Find the IP address of service
+
+`kubectl get svc knative-ingressgateway --namespace istio-system`{{execute}}
+
+
+Find URL of the service
+`kubectl get services.serving.knative.dev helloworld-go  --output=custom-columns=NAME:.metadata.name,DOMAIN:.status.domain`{{execute}}
