@@ -5,7 +5,7 @@
   "time": "2 minutes",
   "details": {
     "steps": [{
-      "title": "Step 1 - Run Command",
+      "title": "Step 1 - Install dashboard",
       "text": "step1.md"
     }],
     "intro": {
@@ -17,6 +17,8 @@
     }
   },
   "environment": {
+    "showdashboard": true,
+    "dashboards": [{"name": "Tab 80", "port": 80}, {"name": "Tab 8443", "port": 8443}],
     "uilayout": "terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
   },
