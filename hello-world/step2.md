@@ -11,9 +11,8 @@ Monitor the Istio components until all of the components show a STATUS of Runnin
 `watch -n 1 kubectl get pods --namespace istio-system`{{execute}}
 
 Run the kubectl apply command to install Knative and its dependencies
-`kubectl apply --filename https://github.com/knative/serving/releases/download/v0.1.1/release.yaml`{{execute}}
+`kubectl apply --filename https://github.com/knative/serving/releases/download/v0.1.1/release-lite.yaml`{{execute}}
 
 
 Monitor the Knative components until all of the components show a STATUS of Running:
-`watch -n 1 kubectl get pods --namespace knative-serving`{{execute}}
-`watch -n 1 kubectl get pods --namespace knative-build`{{execute}}
+`watch -n 1 kubectl get pods --all-namespaces`{{execute}}
