@@ -1,7 +1,23 @@
-This is your first step.
+Setup the Kubernetes Dashboard
 
-## Task
 
-This is an _example_ of creating a scenario and running a **command**
+Start kubernetes by running launch.sh
 
-`echo 'Hello World'`{{execute}}
+`launch.sh`{{execute}}
+
+Verify k8s is running
+
+`kubectl cluster-info`{{execute}}
+
+Install Dashboard 
+
+`kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml`{{execute}}
+
+Verify Dashboard pod is running
+
+`kubectl get po --all-namespaces`{{execute}}
+
+Expose dashboard on port 8443
+
+`kubectl -n kube-system port-forward $(kubectl -n kube-system get po -l k8s-app=kubernetes-dashboard -oname | c -d/ -f 2) 8443:8443`{{execute}}
+
