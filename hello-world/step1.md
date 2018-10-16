@@ -11,7 +11,8 @@ Verify k8s is running
 
 Install Dashboard 
 
-`kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml`{{execute}}
+`kubectl create -f \ 
+https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml`{{execute}}
 
 Verify Dashboard pod is running
 
@@ -19,5 +20,6 @@ Verify Dashboard pod is running
 
 Expose dashboard on port 8443
 
-`kubectl -n kube-system port-forward $(kubectl -n kube-system get po -l k8s-app=kubernetes-dashboard -oname | c -d/ -f 2) 8443:8443`{{execute}}
+`kubectl -n kube-system port-forward \ 
+$(kubectl -n kube-system get po -l k8s-app=kubernetes-dashboard -oname | cut -d/ -f 2) 8443:8443`{{execute}}
 
